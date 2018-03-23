@@ -7,12 +7,14 @@ with urllib.request.urlopen("http://api.bbce.com.br/produto/todos") as url:
 
 c_data = len(data)
 output = csv.writer(open("../arquivos/ids_desc.csv", "w"))
-ent_headers = data[0]
-keys = list(ent_headers.keys())
-output.writerow((keys[0], keys[1]))
+#ent_headers = data[0]
+#keys = list(ent_headers.keys())
+#output.writerow((keys[0], keys[1]))
+output.writerow(("id", "descricao"))
 
 i = 0
 while c_data > i:
-    cont = list(data[i].values())
-    output.writerow((cont[0], cont[1]))
+    #cont = list(data[i].values())
+    #output.writerow((cont[0], cont[1]))
+    output.writerow(data[i]['id'], data[i]['descricao'])
     i = i + 1
