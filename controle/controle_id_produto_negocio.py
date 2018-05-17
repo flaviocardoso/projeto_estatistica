@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-
+#em desenvolvimento
 import json, csv, requests, os, time
 from datetime import date
 init = time.time()
